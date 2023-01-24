@@ -7,7 +7,7 @@ function Home() {
     const data = {
    LongUrl:url
     };
-  fetch(`${process.env.URLS}/api/longurl`, {
+  fetch(`${process.env.REACT_APP_BASE_URL}/api/longurl`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -27,7 +27,7 @@ function Home() {
     
 const [part, setpart] = useState([]);
 useEffect(() => {
-  fetch(`${process.env.URLS}/api/shorturl`)
+  fetch(`${process.env.REACT_APP_BASE_URL}/api/shorturl`)
     .then((data) => data.json())
     .then((parts) => setpart(parts));          
 },[]);
